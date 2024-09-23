@@ -4,10 +4,12 @@ import os
 
 #  Корневая директория проекта
 ROOT_DIR = os.path.dirname(__file__)
-# print(ROOT_DIR)
 
 #  Путь до XLSX-файла
-PATH_TO_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "operations.xlsx")
+PATH_TO_FILE = os.path.join(ROOT_DIR, "data", "vacancies.json")
+
+#  Путь к создаваемому файлу
+NEW_PATH_TO_FILE = os.path.join(ROOT_DIR, "data")
 
 
 #  Настройки для логгера
@@ -22,3 +24,11 @@ def setup_logger(name: str, log_file: str) -> logging.Logger:
     logger.addHandler(file_handler)
     logger.setLevel(logging.INFO)
     return logger
+
+
+if __name__ == "__main__":
+    print(ROOT_DIR)
+    print()
+    print(PATH_TO_FILE)
+    print()
+    print(NEW_PATH_TO_FILE)
